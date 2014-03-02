@@ -1,20 +1,20 @@
 
-<legend><?php echo __('Register'); ?></legend>
-<form action='' method='POST' class="form-horizontal" role="form">
+<h1 align='center'>Register</h1>
+<form method='POST' class="form-horizontal" role="form">
 	<div class="form-group">
-		<label for="inputEmail3" class="col-sm-2 control-label">Username</label>
+		<label class="col-sm-2 control-label">Username</label>
 		<div class="col-sm-8">
-			<input type="text" name="username" class="form-control" id="inputUsername" placeholder="username">
+			<input type="text" name="username" class="form-control" placeholder="username">
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+		<label class="col-sm-2 control-label">Password</label>
 		<div class="col-sm-8">
-			<input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
+			<input type="password" name="password" class="form-control" placeholder="Password">
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="Role" class="col-sm-2 control-label">Role</label>
+		<label class="col-sm-2 control-label">Role</label>
 		<div class="col-sm-8 col-md-2">
 			<select name="role" class="form-control">
 				<option value="admin">Admin</option>

@@ -1,10 +1,11 @@
 <?php
-class UsersController extends AppController {
 
+class UsersController extends AppController {
+	
 	public function beforeFilter() {
 		parent::beforeFilter();
     // Allow users to register and logout.
-		$this->Auth->allow('register', 'logout','index','editUser','deleteUser');
+		$this->Auth->allow('register', 'logout','editUser','deleteUser');
 	}
 
 	public function login() {
@@ -19,7 +20,7 @@ class UsersController extends AppController {
 	public function logout() {
 		return $this->redirect($this->Auth->logout());
 	}
-
+	
 	public function index() {
 		$this->User->recursive = 0;
 		$this->set('usersList', $this->paginate());
@@ -59,7 +60,7 @@ class UsersController extends AppController {
 				);
 		} else {
 			$this->request->data = $this->User->read(null, $id);
-			unset($this->request->data['User']['password']);
+			// unset($this->request->data['User']['password']);
 			//Nếu không có dữ liệu gửi lên
 			$this->set('user', $this->request->data);			//gửi tới View/User/edit_user.ctp
 		}
@@ -78,29 +79,6 @@ class UsersController extends AppController {
 		}
 		$this->Session->setFlash(__('User was not deleted'));
 		return $this->redirect(array('action' => 'index'));
-	}
-
-	public function search($value='')
-	{
-			# code...
-	}
-	public function confirm($value='')
-	{
-			# code...
-	}
-	public function changePassword(){
-
-	}
-	public function changeVerifyCode(){
-
-	}
-	public function blockAccount($value='')
-	{
-			# code...
-	}
-	public function acceptRegister($value='')
-	{
-			# code...
 	}
 
 }

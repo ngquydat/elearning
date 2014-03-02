@@ -2,7 +2,6 @@
 <p><?php echo $this->Html->link("Add User", array('action' => 'register')); ?></p>
 
 <table class="table">
-
     <tr>
         <th>id</th>
         <th>username</th>
